@@ -330,6 +330,10 @@ body.locked{overflow:hidden;height:100vh}
 .polaroid:nth-child(1){transform:rotate(-6deg)}
 .polaroid:nth-child(3){transform:rotate(6deg)}
 .polaroid:hover{transform:rotate(0) scale(1.06);z-index:2}
+.polaroid.big{width:min(320px,80vw);transform:rotate(-3deg);padding-bottom:52px}
+.polaroid.big:hover{transform:rotate(0) scale(1.04)}
+.polaroid.big img{aspect-ratio:1/1.18}
+.polaroid.big figcaption{font-size:clamp(1rem,3.6vw,1.15rem)}
 .polaroid img{
   width:100%;aspect-ratio:1/1.1;object-fit:cover;display:block;
   border-radius:2px;
@@ -572,20 +576,11 @@ footer .stamp{
     <div class="divider">❦</div>
 
     <div class="polaroids">
-      <figure class="polaroid">
+      <figure class="polaroid big">
         <span class="tape"></span>
-        <img src="images/hossam-child.jpg" alt="حسام وهو صغير"
-             onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 220%22><rect width=%22200%22 height=%22220%22 fill=%22%23e5d8bd%22/><text x=%22100%22 y=%22100%22 font-size=%2248%22 text-anchor=%22middle%22>👦</text><text x=%22100%22 y=%22150%22 font-size=%2214%22 text-anchor=%22middle%22 fill=%22%236b5836%22>صورة حسام الصغير</text></svg>'">
-        <figcaption>حسام الصغير 👦</figcaption>
-      </figure>
-
-      <div class="heart-mid">💞</div>
-
-      <figure class="polaroid">
-        <span class="tape"></span>
-        <img src="images/nada-child.jpg" alt="ندى وهي صغيرة"
-             onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 220%22><rect width=%22200%22 height=%22220%22 fill=%22%23e5d8bd%22/><text x=%22100%22 y=%22100%22 font-size=%2248%22 text-anchor=%22middle%22>👧</text><text x=%22100%22 y=%22150%22 font-size=%2214%22 text-anchor=%22middle%22 fill=%22%236b5836%22>صورة ندى الصغيرة</text></svg>'">
-        <figcaption>ندى الصغيرة 👧</figcaption>
+        <img src="images/couple-child.jpg" alt="حسام وندى وهما صغيرين"
+             onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 220%22><rect width=%22200%22 height=%22220%22 fill=%22%23e5d8bd%22/><text x=%22100%22 y=%22100%22 font-size=%2248%22 text-anchor=%22middle%22>👦👧</text><text x=%22100%22 y=%22150%22 font-size=%2214%22 text-anchor=%22middle%22 fill=%22%236b5836%22>صورة حسام وندى الصغيرين</text></svg>'">
+        <figcaption>حسام وندى… من أول يوم 💞</figcaption>
       </figure>
     </div>
 
@@ -628,7 +623,7 @@ footer .stamp{
       <div class="card">
         <div class="ico">📍</div>
         <h3>المكان</h3>
-        <p>قاعة <b>وادي العمر</b><br>صفط تراب — المحلة الكبرى</p>
+        <p>قاعة <b>وادي القمر</b><br>صفط تراب — المحلة الكبرى</p>
         <div class="btn-row">
           <a class="btn" target="_blank" rel="noopener"
              href="https://maps.google.com?q=Wady%20Elamar,%20Saft%20Torab,%20El%20Mahalla%20El%20Kubra&ftid=0x14f7ba239a32d8f7:0x1dbfcc6831d017ab&entry=gps">
@@ -724,7 +719,7 @@ tick(); setInterval(tick, 1000);
   var ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Weddify//AR','BEGIN:VEVENT',
     'DTSTART:20260729T200000','DTEND:20260730T000000',
     'SUMMARY:فرح حسام وندى 💍',
-    'LOCATION:قاعة وادي العمر - صفط تراب - المحلة الكبرى',
+    'LOCATION:قاعة وادي القمر - صفط تراب - المحلة الكبرى',
     'DESCRIPTION:مستنيينكم الساعة 8 مساءً 🤍',
     'END:VEVENT','END:VCALENDAR'].join('\r\n');
   document.getElementById('calBtn').href = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics);
