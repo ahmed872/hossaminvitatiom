@@ -278,7 +278,8 @@ body.locked{overflow:hidden;height:100vh}
   margin-bottom:22px;
 }
 .hero-date-pill{
-  display:inline-flex;align-items:center;gap:10px;
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  flex-wrap:wrap;max-width:100%;text-align:center;line-height:1.8;
   font-family:'Reem Kufi',sans-serif;
   font-size:clamp(.95rem,3.4vw,1.15rem);
   color:var(--gold-light);
@@ -481,7 +482,8 @@ footer{
   background:linear-gradient(180deg,transparent,rgba(0,0,0,.3));
 }
 footer a{
-  display:inline-flex;align-items:center;gap:8px;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  flex-wrap:wrap;max-width:340px;line-height:2;
   font-family:'Reem Kufi',sans-serif;
   font-size:clamp(.85rem,3vw,.95rem);
   color:rgba(247,240,224,.6);
@@ -564,7 +566,7 @@ footer .stamp{
       <p class="hero-welcome">Once upon a time…</p>
       <h2 class="hero-names">Hossam <span class="amp">&amp;</span> Nada</h2>
       <p class="hero-sub">WEDDING&nbsp;CELEBRATION</p>
-      <div class="hero-date-pill">🗓️ الأربعاء 29 يوليو 2026 — الساعة 8 مساءً</div>
+      <div class="hero-date-pill"><span>🗓️ الأربعاء 29 يوليو 2026</span><span>—</span><span>الساعة&nbsp;8&nbsp;مساءً</span></div>
     </div>
     <p class="scroll-cue">⌄ انزل تحت وشوف الحكاية</p>
   </section>
