@@ -679,6 +679,8 @@ try{
     var next = tries.shift();
     if(next){ img.src = next; } else { img.onerror = null; img.src = ph; }
   };
+  /* the error event may have fired before this handler was attached */
+  if(img.complete && img.naturalWidth === 0){ img.onerror(); }
 })();
 
 /* ══════════ envelope open ══════════ */
