@@ -578,8 +578,7 @@ footer .stamp{
     <div class="polaroids">
       <figure class="polaroid big">
         <span class="tape"></span>
-        <img src="images/couple-child.jpg" alt="حسام وندى وهما صغيرين"
-             onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 220%22><rect width=%22200%22 height=%22220%22 fill=%22%23e5d8bd%22/><text x=%22100%22 y=%22100%22 font-size=%2248%22 text-anchor=%22middle%22>👦👧</text><text x=%22100%22 y=%22150%22 font-size=%2214%22 text-anchor=%22middle%22 fill=%22%236b5836%22>صورة حسام وندى الصغيرين</text></svg>'">
+        <img id="childPhoto" src="images/couple-child.jpg" alt="حسام وندى وهما صغيرين">
         <figcaption>حسام وندى… من أول يوم 💞</figcaption>
       </figure>
     </div>
@@ -670,6 +669,17 @@ try{
   var p = new URLSearchParams(location.search).get('to');
   if(p){ document.getElementById('guestLine').innerHTML = 'دعوة خاصة لـ <b>' + p.replace(/</g,'&lt;') + '</b> … افتحها بنفسك'; }
 }catch(e){}
+
+/* ══════════ childhood photo: try several filenames ══════════ */
+(function(){
+  var img = document.getElementById('childPhoto');
+  var tries = ['images/hossam.jpeg','images/hossam.jpg','images/couple-child.jpeg','images/couple-child.png','images/hossam.png'];
+  var ph = 'data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 220%22><rect width=%22200%22 height=%22220%22 fill=%22%23e5d8bd%22/><text x=%22100%22 y=%22100%22 font-size=%2248%22 text-anchor=%22middle%22>👦👧</text><text x=%22100%22 y=%22150%22 font-size=%2214%22 text-anchor=%22middle%22 fill=%22%236b5836%22>صورة حسام وندى الصغيرين</text></svg>';
+  img.onerror = function(){
+    var next = tries.shift();
+    if(next){ img.src = next; } else { img.onerror = null; img.src = ph; }
+  };
+})();
 
 /* ══════════ envelope open ══════════ */
 var opened = false;
